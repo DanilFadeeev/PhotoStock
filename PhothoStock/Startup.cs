@@ -35,7 +35,6 @@ namespace PhothoStock
             services.AddControllersWithViews();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -53,7 +52,6 @@ namespace PhothoStock
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(name:"name",  pattern: "{Controller=Photo}/{Action=ShowAllPhotos}/{id?}");
-                endpoints.MapDefaultControllerRoute();
             });
         }
     }
