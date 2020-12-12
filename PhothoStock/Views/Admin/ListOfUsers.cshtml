@@ -1,0 +1,21 @@
+﻿@model IEnumerable<ApplicationUser>
+@{
+    Layout = "_AdminLayout";
+
+}
+@foreach (var i in Model)
+{
+    <div>
+        <label class="col-form-label">@i.UserName</label>
+        <a class="btn btn-danger" asp-action="Delete" asp-route-UserLogin="@i.UserName">Delete</a>
+        @if (i.IsEnabled)
+        {
+        <a class="btn btn-warning" asp-action="Block" asp-route-UserLogin="@i.UserName">Block</a>
+        }
+        else
+        {
+            <a class="btn btn-info" asp-action="Unblock" asp-route-UserLogin="@i.UserName">Unblock</a>
+        }
+        <a class="btn btn-primary" asp-action="Info" asp-route-UserLogin="@i.UserName">Info</a>
+    </div>
+}

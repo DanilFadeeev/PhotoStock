@@ -1,0 +1,22 @@
+﻿@model List<Filter>
+@{
+    int i = 0;
+}
+<form asp-action="showfilteredphotos" asp-controller="photo" method="post">
+
+   
+    @foreach (var filter in Model)
+    {
+        <input type ="hidden" asp-for="@Model[i].Category" value="@Model[i].Category" />
+        <div>
+            <label>@Model[i].Category:</label>
+            <input asp-for="@Model[i].Active"  />
+        </div>
+       
+         i = i + 1;
+         
+    }
+
+    <button class="btn btn-primary" type="submit">Red Cars</button>
+
+</form>

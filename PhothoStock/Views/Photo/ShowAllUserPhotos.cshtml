@@ -1,0 +1,8 @@
+﻿@model IEnumerable<string> 
+@{
+    Layout = "_Layout";
+}
+@foreach (var i in Model)
+{
+   <img src ="~/UsersPhotos/@ViewData["UserName"]/@i" width="250" height="250" />
+}

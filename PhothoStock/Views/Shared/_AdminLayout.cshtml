@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <div>
+        <a asp-action="AddPhoto" asp-controller="Photo" class="btn btn-primary">add photos</a>
+        <a asp-action="ShowAllUserPhotos" asp-controller="Photo" class="btn btn-primary">show your photos</a>
+        <a asp-action="ShowAllPhotos" asp-controller="Photo" class="btn btn-primary">show all photos</a>
+            <a asp-action="Logout" asp-controller="Account" class="btn btn-primary">Logout</a>
+            <a asp-action="ListOfUsers" asp-controller="Admin" class="btn btn-primary">Show Users</a>
+            <a asp-action="Categories" asp-controller="Admin" class="btn btn-primary">Manage Categories</a>
+    </div>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    @if (IsSectionDefined("Scripts"))
+    {
+        @RenderSection("Scripts")
+    }
+</body>
+</html>

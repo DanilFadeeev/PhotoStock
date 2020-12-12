@@ -1,0 +1,31 @@
+﻿@model PhotoPostData
+@{
+    Layout = "_Layout";
+    int i = 0;
+}
+<form asp-action="PostPhoto" enctype="multipart/form-data" method="post">
+    <div>
+        <label asp-for="Description" class="col-form-label"></label>
+        <input type="text" asp-for="Description" class="form-check-input" />
+    </div>
+    <div>
+        <label asp-for="Photo" class="col-form-label"></label>
+        <input asp-for="Photo" class="form-check-input" accept="image/*" />
+    </div>
+    @foreach (var filter in Model.Filters)
+    {
+        <input type="hidden" asp-for="@Model.Filters[i].Category" value="@Model.Filters[i].Category" />
+        <div>
+            <label>@Model.Filters[i].Category:</label>
+            <input asp-for="@Model.Filters[i].Active" />
+        </div>
+
+        i = i + 1;
+
+    }
+    <div>
+        <div>
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </div>
+</form>

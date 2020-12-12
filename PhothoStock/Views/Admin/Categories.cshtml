@@ -1,0 +1,16 @@
+﻿@model IEnumerable<string>
+@{
+    Layout = "_AdminLayout";
+}
+@foreach (var i in Model)
+{
+<div>
+    <label>@i</label>
+    <a asp-action="DeleteCategory" asp-route-categoryName="@i">Delete</a>
+</div>
+}
+<form asp-action="AddCategory" method="post">
+    <label class="bg-info">Create new category</label>
+    <input type="text" name="categoryName" />
+    <button type ="submit" class="btn btn-primary">Add</button>
+</form>

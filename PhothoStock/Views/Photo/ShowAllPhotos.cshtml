@@ -1,0 +1,35 @@
+﻿@model PhotoInfoAndFilters
+@{
+    Layout = "_Layout";
+    int i = 0;
+    int next =(int)ViewData["page"] + 1;
+    int previous =(int)ViewData["page"] - 1;
+
+}
+@foreach(var j in Model.PhotosInfo)
+{
+<a asp-action="ShowPhotoInfo" asp-route-photoId="@j.Id">
+    <img src="~/UsersPhotos/@j.UserName/@j.PhotoName" height="250" width="250" />
+</a>
+}
+<form asp-action="showallphotos" asp-controller="photo" method="post">
+
+
+    @foreach (var filter in Model.Filters)
+    {
+        <input type="hidden" asp-for="@Model.Filters[i].Category" value="@Model.Filters[i].Category" />
+
+        <div>
+            <label>@Model.Filters[i].Category:</label>
+            <input asp-for="@Model.Filters[i].Active" />
+        </div>
+
+        i = i + 1;
+
+    }
+   @* <input type ="number" name="page" />*@
+    <button class="btn btn-primary" type="submit">Red Cars</button>
+    <button class="btn btn-primary" type="submit" name="page"   value=@next>Next</button>
+    <button class="btn btn-primary" type="submit" value=@previous name="page">Previous</button>
+
+</form>

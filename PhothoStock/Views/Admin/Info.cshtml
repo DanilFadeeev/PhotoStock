@@ -1,0 +1,14 @@
+﻿@model ApplicationUser
+@{
+    Layout = "_AdminLayout";
+
+}
+User name: @Model.UserName
+User Photos:
+@foreach (var i in Model.Photos)
+{
+    <a asp-action="ShowPhotoInfo" asp-route-photoId="@i.Id">
+        <img src="~/UsersPhotos/@i.UserName/@i.PhotoName" width="250" height="250" />
+    </a>
+    <a class="btn btn-danger" asp-action="DeletePhoto" asp-route-id="@i.Id">Delete</a>
+}

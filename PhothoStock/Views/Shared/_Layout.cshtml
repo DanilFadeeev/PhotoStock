@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <div>
+        <a asp-action="AddPhoto" asp-controller="Photo" class="btn btn-primary">add photos</a>
+        <a asp-action="ShowAllUserPhotos" asp-controller="Photo" class="btn btn-primary">show your photos</a>
+        <a asp-action="ShowAllPhotos" asp-controller="Photo" class="btn btn-primary">show all photos</a>
+        @if (!User.Identity.IsAuthenticated)
+        {
+        <a asp-action="LogIn" asp-controller="Account" class="btn btn-primary">login</a>
+        <a asp-action="SignUp" asp-controller="Account" class="btn btn-primary">signUp</a>
+        }
+        else
+        {
+        <a asp-action="Logout" asp-controller="Account" class="btn btn-primary">Logout</a>
+        }
+    </div>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    @if (IsSectionDefined("Scripts"))
+    {
+        @RenderSection("Scripts")
+    }
+</body>
+</html>

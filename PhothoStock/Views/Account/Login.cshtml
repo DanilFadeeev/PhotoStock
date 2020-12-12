@@ -1,0 +1,23 @@
+﻿@model LoginData
+@{
+    Layout = "_Layout";
+}
+<form asp-action="Login" class="form-group">
+    <div>
+        <label asp-for="Email" class="col-form-label"></label>
+        <input type="text" asp-for="Email" class="form-check-input" />
+    </div>
+    <div>
+        <label asp-for="Password" class="col-form-label"></label>
+        <input asp-for="Password" class="form-check-input" />
+    </div>
+    <input type ="hidden" name="returnurl" value="@ViewData["returnurl"]" />
+    <div>
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>
+@section Scripts
+{
+     <script  src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive//jquery.validate.unobtrusive.js"></script>
+}
