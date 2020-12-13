@@ -5,11 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using PhothoStock.Data.DTO;
 using PhothoStock.Models.Identity;
 using PhothoStock.Utils;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PhothoStock.Controllers
 {

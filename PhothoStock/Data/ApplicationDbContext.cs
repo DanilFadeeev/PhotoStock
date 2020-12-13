@@ -2,10 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using PhothoStock.Models;
 using PhothoStock.Models.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PhothoStock.Data
 {
