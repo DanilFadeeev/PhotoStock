@@ -3,8 +3,12 @@
     Layout = "_AdminLayout";
 
 }
-User name: @Model.UserName
+<p>
+    User name: @Model.UserName
+</p>
+<p>
 User Photos:
+</p>
 @foreach (var i in Model.Photos)
 {
     <a asp-action="ShowPhotoInfo" asp-route-photoId="@i.Id">
