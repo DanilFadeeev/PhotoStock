@@ -31,7 +31,6 @@ namespace PhothoStock
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
             .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
 
-            // This one needs to be last for the environment variables to have the highest priority
             builder.AddEnvironmentVariables("ASPNETCORE_");
             Configuration = builder.Build();
         }
